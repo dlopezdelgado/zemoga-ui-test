@@ -15,8 +15,8 @@
 
   <h2 class="celebrities-list__title">Votes</h2>
 
-  <div *ngIf="celebritiesHandler.loadingCelebrities$ | async">
-    Loading
+  <div class="celebrities-loading" *ngIf="celebritiesHandler.loadingCelebrities$ | async">
+    <app-loader [diameter]='100' [stroke]='6'></app-loader>
   </div>
 
   <section class="celebrities-list__wrapper" *ngIf="celebrities">
