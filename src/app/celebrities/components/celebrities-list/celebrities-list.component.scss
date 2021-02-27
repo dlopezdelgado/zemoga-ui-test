@@ -1,22 +1,63 @@
 @import "src/themes/mixins";
 
-.celebrities-list-title{
-  font-size: 40px;
-  font-weight: 400;
-}
-
 .celebrities-list{
-  margin-top: 40px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
 
-  &__item{
-    flex: 40%;
+  &__message{
+    margin-top: 40px;
+    background-color: #ebebeb;
+    padding: 20px;
+    display: flex;
+    &__left{
+      flex: 40%;
+      &__normal{
+        display: block;
+        font-size: 22px;
+      }
+      &__big{
+        font-size: 37px;
+        font-weight: bold;
+      }
+
+      @include mq-down(sm) {
+        &__normal{
+          font-size: 16px;
+        }
+        &__big{
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+    }
+    &__right{
+      font-size: 15px;
+      align-self: center;
+    }
   }
 
-  @include mq-down(md) {
-    flex-direction: column;
-    align-items: center;
+  &__title{
+      font-size: 40px;
+
+      @include mq-down(md) {
+        text-align: center;
+      }
+  }
+
+  &__wrapper{
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+  
+    &__item{
+      flex: 40%;
+    }
+  
+    @include mq-down(md) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 }
+
+
+
