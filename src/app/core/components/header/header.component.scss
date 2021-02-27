@@ -1,0 +1,27 @@
+@import "src/themes/mixins";
+@import "src/themes/colors";
+
+.header {
+  display: flex;
+  padding-top: 35px;
+  height: 705px;
+  &__title {
+    margin: 0;
+    font-size: 32px;
+    font-weight: normal;
+  }
+
+  &__navbar {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 10px 90px 10px 0;
+    &__item {
+      font-size: 16px;
+      color: $primary;
+      text-decoration: none;
+      font-weight: 100;
+    }
+  }
+}
