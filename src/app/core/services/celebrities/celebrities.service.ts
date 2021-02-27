@@ -14,4 +14,5 @@ export class CelebritiesService {
   getAll(): Observable<Celebrity[]>{
     return this.http.get<Celebrity[]>(serverUrls.celebrities);
   }
+
 }
