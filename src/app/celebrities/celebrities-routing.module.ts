@@ -5,7 +5,7 @@ import { CelebritiesListComponent } from './components/celebrities-list/celebrit
 
 const routes: Routes = [
   {
-    path: '', 
+    path: '',
     component: CelebritiesListComponent
   }
 ];

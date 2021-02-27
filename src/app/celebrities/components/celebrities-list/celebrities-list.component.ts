@@ -9,7 +9,7 @@ export class CelebritiesListComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

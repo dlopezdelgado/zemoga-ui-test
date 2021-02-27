@@ -9,7 +9,7 @@ export class CelebrityCardComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }
