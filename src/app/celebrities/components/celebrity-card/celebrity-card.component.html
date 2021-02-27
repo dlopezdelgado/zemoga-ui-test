@@ -1,19 +1,25 @@
-<section class="celebrity-card">
+<section
+  class="celebrity-card"
+  [id]="id"
+  *ngIf="celebrity"
+  [ngStyle]="{ 'background-image': 'url(' + celebrity.image + ')' }"
+>
   <div class="celebrity-card__content">
     <div class="celebrity-card__content__thumb"></div>
 
     <div class="celebrity-card__content__info">
-      <div class="celebrity-card__content__info__name">Kanye West</div>
+      <div class="celebrity-card__content__info__name">
+        {{ celebrity.name }}
+      </div>
       <div class="celebrity-card__content__info__small">
         <strong class="celebrity-card__content__info__small__since">
           1 month ago
         </strong>
-        in Entertainment
+        in {{ celebrity.category }}
       </div>
 
       <div class="celebrity-card__content__info__description">
-        Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu
-        velit libero.
+        {{ celebrity.description }}
       </div>
 
       <div class="celebrity-card__content__info__buttons">
@@ -35,17 +41,13 @@
       class="celebrity-card__bottom__bar celebrity-card__bottom__bar--positive"
       style="width: 50%"
     >
-      <span class="celebrity-card__bottom__bar__value-positive">
-        50%
-      </span>
+      <span class="celebrity-card__bottom__bar__value-positive"> 50% </span>
     </div>
     <div
       class="celebrity-card__bottom__bar celebrity-card__bottom__bar--negative"
       style="width: 50%"
     >
-    <span class="celebrity-card__bottom__bar__value-negative">
-      50%
-    </span>
+      <span class="celebrity-card__bottom__bar__value-negative"> 50% </span>
     </div>
   </div>
 </section>

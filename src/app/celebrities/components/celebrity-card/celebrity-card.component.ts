@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Celebrity } from 'src/app/shared/models/celebrity.model';
 
 @Component({
   selector: 'app-celebrity-card',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./celebrity-card.component.scss']
 })
 export class CelebrityCardComponent implements OnInit {
+
+  @Input() id: string | undefined;
+  @Input() celebrity: Celebrity | undefined;
 
   constructor() { }
 

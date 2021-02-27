@@ -1,16 +1,17 @@
 export interface Celebrity {
   id: string;
   name: string;
+  image: string;
   category: string;
   description: string;
-  votes: Vote[];
+  votes?: Vote[];
 
 }
 
 
 export interface Vote {
   id: string;
-  celebrity: Celebrity;
   positiveVote: boolean;
   negativeVote: boolean;
+  voteDate: Date;
 }

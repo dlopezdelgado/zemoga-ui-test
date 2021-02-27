@@ -17,18 +17,9 @@
 
   <h2 class="celebrities-list__title">Votes</h2>
 
-  <section class="celebrities-list__wrapper">
-    <div class="celebrities-list__wrapper__item">
-      <app-celebrity-card></app-celebrity-card>
-    </div>
-    <div class="celebrities-list__wrapper__item">
-      <app-celebrity-card></app-celebrity-card>
-    </div>
-    <div class="celebrities-list__wrapper__item">
-      <app-celebrity-card></app-celebrity-card>
-    </div>
-    <div class="celebrities-list__wrapper__item">
-      <app-celebrity-card></app-celebrity-card>
+  <section class="celebrities-list__wrapper" *ngIf="celebrities">
+    <div class="celebrities-list__wrapper__item" *ngFor="let celebrity of celebrities; let i = index">
+      <app-celebrity-card [id]="'celebrityItem-'+i" [celebrity]="celebrity"></app-celebrity-card>
     </div>
   </section>
 </section>

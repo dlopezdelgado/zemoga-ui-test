@@ -13,7 +13,8 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    LayoutComponent
   ]
 })
 export class CoreModule { }
