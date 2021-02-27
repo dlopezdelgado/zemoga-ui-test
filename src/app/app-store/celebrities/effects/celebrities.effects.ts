@@ -1,9 +1,9 @@
-import { Injectable } from "@angular/core";
-import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { of } from "rxjs";
-import { catchError, exhaustMap, map, tap } from "rxjs/operators";
-import { CelebritiesService } from "src/app/core/services/celebrities/celebrities.service";
-import { Celebrity } from "src/app/shared/models/celebrity.model";
+import { Injectable } from '@angular/core';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { of } from 'rxjs';
+import { catchError, exhaustMap, map, tap } from 'rxjs/operators';
+import { CelebritiesService } from 'src/app/core/services/celebrities/celebrities.service';
+import { Celebrity } from 'src/app/shared/models/celebrity.model';
 
 import * as CelebritiesActions from '../actions/celebrities.actions';
 

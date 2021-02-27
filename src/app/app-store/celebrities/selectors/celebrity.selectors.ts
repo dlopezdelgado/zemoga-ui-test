@@ -1,5 +1,5 @@
-import { createSelector } from "@ngrx/store";
-import { celebrityAdapter, celebrityFeatureSelector } from "../reducer/celebrities.reducer";
+import { createSelector } from '@ngrx/store';
+import { celebrityAdapter, celebrityFeatureSelector } from '../reducer/celebrities.reducer';
 
 
 const { selectAll } = celebrityAdapter.getSelectors();

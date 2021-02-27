@@ -37,20 +37,20 @@ describe('Celebrities Handler Service (Selectors/Dispatchers)', () => {
 
       it('should listen get all celebrities loading', () => {
         // Arrange
-        spyOn(store$,'dispatch');
+        spyOn(store$, 'dispatch');
 
         // Act
         service.loadCelebrities();
 
         // Assert
         expect(store$.dispatch).toHaveBeenCalled();
-        
-      });      
+
+      });
 
     });
-    
+
 
   });
 
 
-})
+});

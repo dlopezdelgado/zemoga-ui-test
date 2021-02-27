@@ -4,9 +4,7 @@
       <span class="celebrities-list__message__left__normal">
         Speak out. Be heard.
       </span>
-      <span class="celebrities-list__message__left__big">
-        Be counted
-      </span>      
+      <span class="celebrities-list__message__left__big"> Be counted </span>
     </div>
     <div class="celebrities-list__message__right">
       Rule of Thumb is a crowd sourced court of public opinion where anyone and
@@ -17,9 +15,19 @@
 
   <h2 class="celebrities-list__title">Votes</h2>
 
+  <div *ngIf="celebritiesHandler.loadingCelebrities$ | async">
+    Loading
+  </div>
+
   <section class="celebrities-list__wrapper" *ngIf="celebrities">
-    <div class="celebrities-list__wrapper__item" *ngFor="let celebrity of celebrities; let i = index">
-      <app-celebrity-card [id]="'celebrityItem-'+i" [celebrity]="celebrity"></app-celebrity-card>
+    <div
+      class="celebrities-list__wrapper__item"
+      *ngFor="let celebrity of celebrities; let i = index"
+    >
+      <app-celebrity-card
+        [id]="'celebrityItem-' + i"
+        [celebrity]="celebrity"
+      ></app-celebrity-card>
     </div>
   </section>
 </section>

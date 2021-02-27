@@ -10,7 +10,7 @@ import { serverUrls } from 'src/app/shared/utils/constants/app-urls';
 export class CelebritiesService {
 
   constructor(private http: HttpClient) { }
-  
+
   getAll(): Observable<Celebrity[]>{
     return this.http.get<Celebrity[]>(serverUrls.celebrities);
   }

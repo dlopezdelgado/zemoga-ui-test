@@ -1,14 +1,14 @@
-import { createAction, props } from "@ngrx/store";
-import { Celebrity } from "src/app/shared/models/celebrity.model";
-import { ErrorModel } from "src/app/shared/models/error.model";
+import { createAction, props } from '@ngrx/store';
+import { Celebrity } from 'src/app/shared/models/celebrity.model';
+import { ErrorModel } from 'src/app/shared/models/error.model';
 
 export const getAllCelebrities = createAction('[Celebrities] Get All Celebrities');
 export const getAllCelebritiesSuccess = createAction(
-  '[Celebrities] Get All Celebrities Success', 
+  '[Celebrities] Get All Celebrities Success',
   props<{ celebrities: Celebrity[] }>()
 );
 export const getAllCelebritiesFail = createAction(
-  '[Celebrities] Get All Celebrities Fail', 
+  '[Celebrities] Get All Celebrities Fail',
   props<{ error: ErrorModel }>()
 );
 

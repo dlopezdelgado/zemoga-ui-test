@@ -32,7 +32,7 @@ describe('CelebritiesService', () => {
   describe('#getAll', () => {
 
     it('Should call http request with celebrities path to get all celebrities', () => {
-      
+
       // Arrange
       const celebritiesResponse: Celebrity[] = CloneDataInDeep.clone(celebritiesMock);
       const url = `${serverUrls.celebrities}`;
@@ -43,21 +43,21 @@ describe('CelebritiesService', () => {
         (resp: any) => {
           console.log(resp);
           expect(resp).toEqual(celebritiesResponse);
-          
+
         }
       );
 
       const request: TestRequest = httpMock.expectOne(url);
-      request.flush(celebritiesResponse);   
+      request.flush(celebritiesResponse);
 
       // Assert
       expect(request.request.method).toBe('GET');
 
     });
 
-    
 
-  })
+
+  });
 
 
 });

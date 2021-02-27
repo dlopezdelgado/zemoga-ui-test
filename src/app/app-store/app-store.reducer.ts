@@ -1,5 +1,5 @@
-import { ActionReducerMap } from "@ngrx/store";
+import { ActionReducerMap } from '@ngrx/store';
 
-export interface AppState { };
+export interface AppState { }
 
 export const appReducers: ActionReducerMap<AppState> = {};

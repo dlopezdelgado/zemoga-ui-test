@@ -1,7 +1,7 @@
-import { CloneDataInDeep } from "typescript-clone-data-in-deep";
-import { Celebrity } from "../../models/celebrity.model";
-import { celebritiesMock } from "../mocks/celebrities.mock";
-import { createCelebritiesForTesting } from "./test-functions.utils";
+import { CloneDataInDeep } from 'typescript-clone-data-in-deep';
+import { Celebrity } from '../../models/celebrity.model';
+import { celebritiesMock } from '../mocks/celebrities.mock';
+import { createCelebritiesForTesting } from './test-functions.utils';
 
 
 describe('#TestFunctions', () => {

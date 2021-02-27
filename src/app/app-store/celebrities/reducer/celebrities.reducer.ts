@@ -17,7 +17,7 @@ export const celebrityFeatureSelector = createFeatureSelector<CelebrityState>(ce
 
 export const celebrityAdapter: EntityAdapter<Celebrity> = createEntityAdapter<Celebrity>({
   selectId: (celebrity: Celebrity) => celebrity.id,
-  sortComparer: (a: Celebrity, b: Celebrity) => a.name.localeCompare(b.name)
+  // sortComparer: (a: Celebrity, b: Celebrity) => a.name.localeCompare(b.name)
 });
 
 export const celebrityInitialState: CelebrityState = celebrityAdapter.getInitialState({

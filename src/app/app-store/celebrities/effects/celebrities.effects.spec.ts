@@ -100,7 +100,7 @@ describe('Celebrities Effects', () => {
 
     });
 
-  })
+  });
 
 
-})
+});

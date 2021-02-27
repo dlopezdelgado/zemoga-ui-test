@@ -1,11 +1,11 @@
-import { Celebrity } from "src/app/shared/models/celebrity.model";
-import { celebritiesMock } from "src/app/shared/utils/mocks/celebrities.mock";
-import { CloneDataInDeep } from "typescript-clone-data-in-deep";
+import { Celebrity } from 'src/app/shared/models/celebrity.model';
+import { celebritiesMock } from 'src/app/shared/utils/mocks/celebrities.mock';
+import { CloneDataInDeep } from 'typescript-clone-data-in-deep';
 
 import * as CelebritySelectors from './celebrity.selectors';
 
 describe('Celebrity Selectors', () => {
-  
+
   describe('select all technicians', () => {
 
     it('should return all technicians on the state', () => {
@@ -44,8 +44,8 @@ describe('Celebrity Selectors', () => {
       // Assert
       expect(result).toEqual(loadingExpected);
     });
-    
-  })
-  
+
+  });
+
 
 });

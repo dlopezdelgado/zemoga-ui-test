@@ -1,10 +1,10 @@
-import { celebrityInitialState, CelebrityState, reducer } from "./celebrities.reducer";
+import { celebrityInitialState, CelebrityState, reducer } from './celebrities.reducer';
 
 import * as CelebritiesActions from '../actions/celebrities.actions';
-import { celebritiesMock } from "src/app/shared/utils/mocks/celebrities.mock";
-import { ErrorModel } from "src/app/shared/models/error.model";
-import { Celebrity } from "src/app/shared/models/celebrity.model";
-import { CloneDataInDeep } from "typescript-clone-data-in-deep";
+import { celebritiesMock } from 'src/app/shared/utils/mocks/celebrities.mock';
+import { ErrorModel } from 'src/app/shared/models/error.model';
+import { Celebrity } from 'src/app/shared/models/celebrity.model';
+import { CloneDataInDeep } from 'typescript-clone-data-in-deep';
 
 describe('Celebrities Reducer', () => {
 
@@ -27,7 +27,7 @@ describe('Celebrities Reducer', () => {
 
     });
 
-    it(`Should set loadingCelebrities to false and set the list of celebrities 
+    it(`Should set loadingCelebrities to false and set the list of celebrities
       in the state when getAllCelebritiesSuccess action is called`, () => {
 
       // Arrange
@@ -54,7 +54,7 @@ describe('Celebrities Reducer', () => {
       const loadingCelebrities = true;
       const errorResp: ErrorModel = {
         message: 'Error message'
-      }
+      };
       const currentState: CelebrityState = { ...celebrityInitialState, loadingCelebrities };
       const action = CelebritiesActions.getAllCelebritiesFail({ error: errorResp });
       const loadingExpected = false;

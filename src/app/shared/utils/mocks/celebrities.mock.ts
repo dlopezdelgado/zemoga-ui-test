@@ -1,5 +1,5 @@
-import { Celebrity } from "../../models/celebrity.model";
-import { votesMock } from "./votes.mock";
+import { Celebrity } from '../../models/celebrity.model';
+import { votesMock } from './votes.mock';
 
 
 export const celebritiesMock: Celebrity[] = [
