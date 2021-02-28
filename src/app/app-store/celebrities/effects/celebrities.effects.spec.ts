@@ -12,6 +12,7 @@ import { Celebrity } from 'src/app/shared/models/celebrity.model';
 import { CloneDataInDeep } from 'typescript-clone-data-in-deep';
 import { celebritiesMock } from 'src/app/shared/utils/mocks/celebrities.mock';
 import { serverUrls } from 'src/app/shared/utils/constants/app-urls';
+import { Update } from '@ngrx/entity';
 
 
 describe('Celebrities Effects', () => {
@@ -102,5 +103,38 @@ describe('Celebrities Effects', () => {
 
   });
 
+
+
+  describe('#voteCelebrity$', () => {
+
+    it(`Should return a success action if the service response is successful`, () => {
+
+      // Arrange
+      const celebrity: Celebrity = CloneDataInDeep.clone(celebritiesMock[0]);
+      const action = CelebritiesActions.voteCelebrity({ celebrity });
+      const updateCelebrity: Update<Celebrity> = {
+        changes: {
+          ...action.celebrity,
+          votes: celebrity.votes
+        },
+        id: action.celebrity.id
+      }
+      const actionSuccess = CelebritiesActions.voteCelebritySuccess({ celebrity: updateCelebrity });
+
+      // Act
+      actions$.next(action);
+
+      effects.voteCelebrity$.subscribe((response) => {
+
+        // Assert
+        expect(response).toEqual(actionSuccess);
+
+      });
+
+
+
+    });
+
+  });
 
 });
