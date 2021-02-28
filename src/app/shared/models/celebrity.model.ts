@@ -10,8 +10,8 @@ export interface Celebrity {
 
 
 export interface Vote {
-  id: string;
+  id?: string;
   positiveVote: boolean;
   negativeVote: boolean;
-  voteDate: Date;
+  voteDate?: Date;
 }

@@ -10,8 +10,11 @@
     align-items: center;
     gap: 5px;
     &__message {
-      color: red;
+      color: rgb(151, 67, 67);
     }
+  }
+
+  &__retry-btn {
   }
 }
 

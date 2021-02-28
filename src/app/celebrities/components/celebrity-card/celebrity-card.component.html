@@ -1,4 +1,4 @@
-<section
+<div
   class="celebrity-card"
   [id]="id"
   *ngIf="celebrity"
@@ -25,13 +25,15 @@
       <div class="celebrity-card__content__info__buttons">
         <button
           class="celebrity-card__content__info__buttons__vote positive"
+          (click)="vote('positive')"
         ></button>
         <button
           class="celebrity-card__content__info__buttons__vote negative"
+          (click)="vote('negative')"
         ></button>
-        <button class="celebrity-card__content__info__buttons__confirm">
-          Vote now
-        </button>
+        <div class="celebrity-card__content__info__buttons__confirm">
+          {{celebrity.votes?.length}} Total Votes
+        </div>
       </div>
     </div>
   </div>
@@ -39,15 +41,15 @@
   <div class="celebrity-card__bottom">
     <div
       class="celebrity-card__bottom__bar celebrity-card__bottom__bar--positive"
-      style="width: 50%"
+      [style]="'width: '+votesPercents[0]+'%'"
     >
-      <span class="celebrity-card__bottom__bar__value-positive"> 50% </span>
+      <span class="celebrity-card__bottom__bar__value-positive"> {{votesPercents[0] | number: '1.0-0'}}% </span>
     </div>
     <div
       class="celebrity-card__bottom__bar celebrity-card__bottom__bar--negative"
-      style="width: 50%"
+      [style]="'width: '+votesPercents[1]+'%'"
     >
-      <span class="celebrity-card__bottom__bar__value-negative"> 50% </span>
+      <span class="celebrity-card__bottom__bar__value-negative"> {{votesPercents[1] | number: '1.0-0'}}% </span>
     </div>
   </div>
-</section>
+</div>

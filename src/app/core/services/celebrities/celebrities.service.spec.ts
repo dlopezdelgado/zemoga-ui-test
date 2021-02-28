@@ -41,7 +41,6 @@ describe('CelebritiesService', () => {
       // Act
       service.getAll().subscribe(
         (resp: any) => {
-          console.log(resp);
           expect(resp).toEqual(celebritiesResponse);
 
         }

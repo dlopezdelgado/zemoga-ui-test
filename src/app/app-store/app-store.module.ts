@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 import { CelebritiesEffects } from './celebrities/effects/celebrities.effects';
 
 import * as fromCelebrities from './celebrities/reducer/celebrities.reducer';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -15,6 +16,7 @@ import * as fromCelebrities from './celebrities/reducer/celebrities.reducer';
   declarations: [],
   imports: [
     CommonModule,
+    SharedModule,
     StoreModule.forRoot(appReducers, {
       runtimeChecks: {
         strictStateImmutability: true,

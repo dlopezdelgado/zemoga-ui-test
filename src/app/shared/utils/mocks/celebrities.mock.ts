@@ -9,7 +9,7 @@ export const celebritiesMock: Celebrity[] = [
     image: '/assets/images/celebrities/01-kanye-west.jpg',
     description: 'Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.',
     category: 'Entertainment',
-    votes: [votesMock[0], votesMock[1], votesMock[2]]
+    votes: [votesMock[0], votesMock[1], votesMock[0]]
   },
   {
     id: '2',
@@ -17,7 +17,7 @@ export const celebritiesMock: Celebrity[] = [
     image: '/assets/images/celebrities/02-mark-zuckerberg.jpg',
     description: 'Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.',
     category: 'Business',
-    votes: [votesMock[3], votesMock[4], votesMock[5]]
+    votes: [votesMock[0], votesMock[1], votesMock[0], votesMock[1]]
   },
   {
     id: '3',
@@ -25,7 +25,7 @@ export const celebritiesMock: Celebrity[] = [
     image: '/assets/images/celebrities/03-cristina-fernandez.jpg',
     description: 'Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.',
     category: 'Politics',
-    votes: [votesMock[6], votesMock[7]]
+    votes: [votesMock[0], votesMock[1], votesMock[1]]
   },
   {
     id: '4',
@@ -33,6 +33,6 @@ export const celebritiesMock: Celebrity[] = [
     image: '/assets/images/celebrities/04-malala-yousafzai.jpg',
     description: 'Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.',
     category: 'Entertainment',
-    votes: [votesMock[8], votesMock[9], votesMock[10], votesMock[11]]
+    votes: [votesMock[0], votesMock[1]]
   }
 ];

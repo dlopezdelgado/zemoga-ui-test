@@ -3,7 +3,6 @@
 .celebrity-card {
   width: 490px;
   height: 550px;
-  background-image: url("../../../../../src/assets/images/celebrities/01-kanye-west.jpg");
   display: flex;
   align-items: center;
   position: relative;
@@ -18,8 +17,8 @@
     &__thumb {
       width: 35px;
       height: 30px;
-      background-color: #1cbbb4;
-      background-image: url("../../../../assets/icons/thumb-up-small.png");
+      background-color: $positiveBg;
+      background-image: url("/assets/icons/thumb-up-small.png");
     }
 
     &__info {
@@ -52,17 +51,17 @@
         &__vote {
           width: 30px;
           height: 30px;
-          background-color: #1cbbb4;
+          background-color: $positiveBg;
           border: none;
           cursor: pointer;
 
           &.positive {
-            background-image: url("../../../../assets/icons/thumb-up-small.png");
+            background-image: url("/assets/icons/thumb-up-small.png");
           }
 
           &.negative {
-            background-color: #ffad1d;
-            background-image: url("../../../../assets/icons/thumb-down-small.png");
+            background-color: $negativeBg;
+            background-image: url("/assets/icons/thumb-down-small.png");
           }
         }
 
@@ -70,8 +69,7 @@
           background-color: transparent;
           border: 1px solid $primary;
           color: $primary;
-          cursor: pointer;
-          padding: 0 15px;
+          padding: 5px 15px;
         }
       }
     }
@@ -91,12 +89,12 @@
       position: relative;
       &--positive {
         background-color: rgb(28, 187, 180, 0.6);
-        background-image: url("../../../../assets/icons/thumb-up.png");
+        background-image: url("/assets/icons/thumb-up.png");
         background-position: 2% center;
       }
       &--negative {
         background-color: rgb(255, 173, 29, 0.6);
-        background-image: url("../../../../assets/icons/thumb-down.png");
+        background-image: url("/assets/icons/thumb-down.png");
         background-position: 98% center;
         text-align: right;
       }

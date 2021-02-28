@@ -9,7 +9,7 @@ import * as CelebritiesActions from '../actions/celebrities.actions';
 
 export interface CelebrityState extends EntityState<Celebrity> {
   loadingCelebrities: boolean;
-  loadingCreateCelebrity: boolean;
+  loadingVote: boolean;
 }
 
 export const celebritiesFeatureKey = 'celebrities';
@@ -22,7 +22,7 @@ export const celebrityAdapter: EntityAdapter<Celebrity> = createEntityAdapter<Ce
 
 export const celebrityInitialState: CelebrityState = celebrityAdapter.getInitialState({
   loadingCelebrities: false,
-  loadingCreateCelebrity: false
+  loadingVote: false
 });
 
 
@@ -33,5 +33,13 @@ export const reducer = createReducer(
     ...state,
     loadingCelebrities: false
   })),
-  on(CelebritiesActions.getAllCelebritiesFail, (state) => ({...state, loadingCelebrities: false}))
+  on(CelebritiesActions.getAllCelebritiesFail, (state) => ({ ...state, loadingCelebrities: false })),
+
+  on(CelebritiesActions.voteCelebrity, (state) => ({ ...state, loadingVote: true })),
+  on(CelebritiesActions.voteCelebritySuccess, (state, { celebrity }) => celebrityAdapter.updateOne(celebrity, {
+    ...state,
+    loadingVote: false
+  })),
+  on(CelebritiesActions.voteCelebrityFail, (state) => ({ ...state, loadingVote: false })),
+
 );

@@ -1,10 +1,11 @@
+$regularFontColor: #333333;
 $primary: #FFFFFF;
-$accent: #0094FF;
+$secondary: #666666;
+
+$positiveBg: #1cbbb4;
+$negativeBg: #ffad1d;
+
 
 .primary{
     color: $primary;
-}
-
-.accent{
-    color: $accent;
 }
