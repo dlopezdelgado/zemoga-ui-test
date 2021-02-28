@@ -35,11 +35,11 @@ export const reducer = createReducer(
   })),
   on(CandidatesActions.getAllCandidatesFail, (state) => ({ ...state, loadingCandidates: false })),
 
-  on(CandidatesActions.voteCandidate, (state) => ({ ...state, loadingVote: true })),
-  on(CandidatesActions.voteCandidateSuccess, (state, { candidate }) => candidateAdapter.updateOne(candidate, {
+  on(CandidatesActions.updateCandidate, (state) => ({ ...state, loadingVote: true })),
+  on(CandidatesActions.updateCandidateSuccess, (state, { candidate }) => candidateAdapter.updateOne(candidate, {
     ...state,
     loadingVote: false
   })),
-  on(CandidatesActions.voteCandidateFail, (state) => ({ ...state, loadingVote: false })),
+  on(CandidatesActions.updateCandidateFail, (state) => ({ ...state, loadingVote: false })),
 
 );

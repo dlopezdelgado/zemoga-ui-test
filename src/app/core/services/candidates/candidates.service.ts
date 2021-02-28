@@ -16,18 +16,11 @@ export class CandidatesService {
     return this.http.get<Candidate[]>(serverUrls.candidates);
   }
 
-  voteCandidate(candidate: Candidate): Observable<Candidate>{
-    return of(candidate);
+  updateCandidate(candidate: Candidate): Observable<Candidate>{
+    return this.http.put<Candidate>(
+      `${serverUrls.candidates}${candidate._id}`,
+      candidate
+    );
   }
-
-  // getAllLocal(): Observable<Candidate[]>{
-  //   return from(localStorage.getItem('candidates')).pipe(
-  //     map(result => result as Candidate)
-  //   );
-  // }
-
-  // fillDataInLocalStorage(): void {
-  //   localStorage.setItem('candidates', JSON.stringify(candidatesMock));
-  // }
 
 }

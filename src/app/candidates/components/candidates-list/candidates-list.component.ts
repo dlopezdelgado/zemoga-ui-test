@@ -61,7 +61,7 @@ export class CandidatesListComponent implements OnInit, OnDestroy {
       negativeVote: !positiveVote
     };
     updatedCandidate.votes?.push(vote);
-    this.candidatesHandler.voteCandidate(updatedCandidate);
+    this.candidatesHandler.updateCandidate(updatedCandidate);
   }
 
 }

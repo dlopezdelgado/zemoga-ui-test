@@ -109,21 +109,18 @@ describe('CandidatesListComponent', () => {
     it('Should call voteCandidate from candidatesHandler with a positive vote', () => {
 
       // Arrange:
-      const candidates: Candidate[] = CloneDataInDeep.clone<Candidate[]>([{ ...candidatesMock[0], votes: [] }, candidatesMock[1]]);
-      const url = `${serverUrls.candidates}`;
+ 
+      const candidate: Candidate = CloneDataInDeep.clone({...candidatesMock[0], votes: []});
 
-      fixture.detectChanges();
-
-      const request: TestRequest = httpMock.expectOne(url);
-      request.flush(candidates);
-
-      fixture.detectChanges();
-
-      const candidate: Candidate = candidates[0];
       const vote: Vote = {
         negativeVote: false,
         positiveVote: true
       };
+      
+      spyOn(component.candidatesHandler,'updateCandidate');
+  
+
+      fixture.detectChanges();
 
       const voteType = 'positive';
 
@@ -132,17 +129,15 @@ describe('CandidatesListComponent', () => {
         votes: [vote]
       };
 
+
       // Act
       component.voteCandidate({ candidate, voteType });
       fixture.detectChanges();
 
+
       // Assert
-      component.candidatesHandler.getCandidates$.subscribe(
-        (resp) => {
-          const updatedCandidate = resp.filter(cand => cand._id === candidate._id);
-          expect(updatedCandidate[0]).toEqual(expectedCandidate);
-        }
-      );
+      expect(component.candidatesHandler.updateCandidate).toHaveBeenCalledWith(expectedCandidate);
+
 
     });
 

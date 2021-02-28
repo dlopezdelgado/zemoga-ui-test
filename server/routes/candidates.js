@@ -4,11 +4,13 @@
 */
 
 const { Router } = require('express');
-const { getAllCandidates } = require('../controllers/candidates');
+const { getAllCandidates, updateCandidate } = require('../controllers/candidates');
 
 const router = Router();
 
 router.get('/', getAllCandidates);
+
+router.put('/:id', updateCandidate);
 
 
 module.exports = router;

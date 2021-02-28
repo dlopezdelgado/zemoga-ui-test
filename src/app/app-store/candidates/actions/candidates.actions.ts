@@ -14,6 +14,6 @@ export const getAllCandidatesFail = createAction(
 );
 
 
-export const voteCandidate = createAction('[Candidates] Vote Candidate', props<{ candidate: Candidate }>());
-export const voteCandidateSuccess = createAction('[Candidates] Vote Candidate Success', props<{ candidate: Update<Candidate> }>());
-export const voteCandidateFail = createAction('[Candidates] Vote Candidate Fail', props<{ error: ErrorModel }>());
+export const updateCandidate = createAction('[Candidates] Update Candidate', props<{ candidate: Candidate }>());
+export const updateCandidateSuccess = createAction('[Candidates] Update Candidate Success', props<{ candidate: Update<Candidate> }>());
+export const updateCandidateFail = createAction('[Candidates] Update Candidate Fail', props<{ error: ErrorModel }>());

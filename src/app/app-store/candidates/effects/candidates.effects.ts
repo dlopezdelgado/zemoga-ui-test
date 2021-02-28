@@ -19,10 +19,10 @@ export class CandidatesEffects {
     ))
   ));
 
-  voteCandidate$ = createEffect(() => this.actions$.pipe(
-    ofType(CandidatesActions.voteCandidate),
-    exhaustMap(action => this.service.voteCandidate(action.candidate).pipe(
-      map(candidateData => CandidatesActions.voteCandidateSuccess({
+  updateCandidate$ = createEffect(() => this.actions$.pipe(
+    ofType(CandidatesActions.updateCandidate),
+    exhaustMap(action => this.service.updateCandidate(action.candidate).pipe(
+      map(candidateData => CandidatesActions.updateCandidateSuccess({
         candidate: {
           changes: {
             ...action.candidate,
@@ -31,7 +31,7 @@ export class CandidatesEffects {
           id: action.candidate._id
         }
       })),
-      catchError(error => of(CandidatesActions.voteCandidateFail({ error })))
+      catchError(error => of(CandidatesActions.updateCandidateFail({ error })))
     ))
   ));
 

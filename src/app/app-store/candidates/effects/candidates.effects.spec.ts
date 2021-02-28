@@ -111,7 +111,7 @@ describe('Candidates Effects', () => {
 
       // Arrange
       const candidate: Candidate = CloneDataInDeep.clone(candidatesMock[0]);
-      const action = CandidatesActions.voteCandidate({ candidate });
+      const action = CandidatesActions.updateCandidate({ candidate });
       const updateCandidate: Update<Candidate> = {
         changes: {
           ...action.candidate,
@@ -119,12 +119,12 @@ describe('Candidates Effects', () => {
         },
         id: action.candidate._id
       }
-      const actionSuccess = CandidatesActions.voteCandidateSuccess({ candidate: updateCandidate });
+      const actionSuccess = CandidatesActions.updateCandidateSuccess({ candidate: updateCandidate });
 
       // Act
       actions$.next(action);
 
-      effects.voteCandidate$.subscribe((response) => {
+      effects.updateCandidate$.subscribe((response) => {
 
         // Assert
         expect(response).toEqual(actionSuccess);
