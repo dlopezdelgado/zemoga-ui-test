@@ -1,0 +1,22 @@
+@import "src/themes/mixins";
+@import "src/themes/colors";
+
+.zenoga-app{
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  &--home{
+    background-image: url("../assets/images/pope-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  @include mq-up(sm) {
+    margin-bottom: 0;
+  }
+
+  @include mq-down(md) {
+    width: 100%;
+  }
+}

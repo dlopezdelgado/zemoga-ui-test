@@ -1,27 +1,27 @@
-# Zemoga
+# Zemoga UI Test
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.5.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.2.
+Author: Daniel López
 
-## Development server
+## CSS
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- System is using BEM methodology for order and modularity purposes
+- SASS precompiler was used
 
-## Code scaffolding
+## Store and State Management (REDUX)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Store has been handled with REDUX library, using the following structure:
+  - An app-store module has been created in order to centralize all the redux in a single module
+  - Each store entity is created in separated folders into app-store folder as the following example:
+    - celebrities
+      - actions
+      - effects
+      - handler: this feature handles all selectors and actions dispatchers for the entity in store
+      - reducer
+      - selectors
 
-## Build
+## Unit Testing
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- TDD methodology was applied for most of the cases related to state management and bussiness logic.
+- Run 'npm run test' in console to checkout the code coverage
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

@@ -1,0 +1,29 @@
+.error-component {
+  padding: 5px 20px;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  background-color: rgba(204, 0, 0, 0.2);
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    &__message {
+      color: rgb(151, 67, 67);
+    }
+  }
+
+  &__retry-btn {
+  }
+}
+
+:host-context(.simple) .error-component {
+  background-color: transparent;
+}
+
+:host-context(.no-retry) .error-component {
+  &__retry-btn {
+    display: none;
+  }
+}

@@ -1,0 +1,8 @@
+<div *ngIf="error" class="error-component">
+  <div class="error-component__content">
+    <p [id]="id" class="error-component__content__message">
+      {{error.message}}
+    </p>
+  </div>
+  <button mat-raised-button [id]="idRetryButton" (click)="retryAction()" class="error-component__retry-btn">Retry</button>
+</div>
