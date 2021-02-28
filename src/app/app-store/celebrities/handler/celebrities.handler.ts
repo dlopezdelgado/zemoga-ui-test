@@ -23,11 +23,11 @@ export class CelebritiesHandler {
   constructor(public actions$: Actions, public store$: Store) { }
 
 
-  loadCelebrities() {
+  loadCelebrities(): void {
     this.store$.dispatch(CelebritiesActions.getAllCelebrities());
   }
 
-  voteCelebrity(celebrity: Celebrity) {
+  voteCelebrity(celebrity: Celebrity): void {
     this.store$.dispatch(CelebritiesActions.voteCelebrity({ celebrity }));
   }
 

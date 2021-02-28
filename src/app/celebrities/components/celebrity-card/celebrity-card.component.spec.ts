@@ -41,7 +41,7 @@ describe('CelebrityCardBusinessLogic (Full TDD)', () => {
       const vote: Vote = {
         positiveVote: true,
         negativeVote: false
-      }
+      };
       const celebrity: Celebrity = CloneDataInDeep.clone({ ...celebritiesMock[0], votes: [vote] });
       const expectedResult = [1, 0];
 
@@ -58,7 +58,7 @@ describe('CelebrityCardBusinessLogic (Full TDD)', () => {
       const vote: Vote = {
         positiveVote: false,
         negativeVote: true
-      }
+      };
       const celebrity: Celebrity = CloneDataInDeep.clone({ ...celebritiesMock[0], votes: [vote] });
       const expectedResult = [0, 1];
 
@@ -127,7 +127,7 @@ describe('CelebrityCardBusinessLogic (Full TDD)', () => {
       // Assert
       expect(votesResult).toEqual(expectedResult);
 
-    });    
+    });
   });
 
   describe('#calculateVotesPercentages', () => {
@@ -162,7 +162,7 @@ describe('CelebrityCardBusinessLogic (Full TDD)', () => {
       const vote: Vote = {
         positiveVote: true,
         negativeVote: false
-      }
+      };
       const celebrity: Celebrity = CloneDataInDeep.clone({ ...celebritiesMock[0], votes: [vote] });
       const expectedResult = [100, 0];
 
@@ -179,7 +179,7 @@ describe('CelebrityCardBusinessLogic (Full TDD)', () => {
       const vote: Vote = {
         positiveVote: false,
         negativeVote: true
-      }
+      };
       const celebrity: Celebrity = CloneDataInDeep.clone({ ...celebritiesMock[0], votes: [vote] });
       const expectedResult = [0, 100];
 
@@ -248,7 +248,7 @@ describe('CelebrityCardBusinessLogic (Full TDD)', () => {
       // Assert
       expect(votesResult).toEqual(expectedResult);
 
-    });    
+    });
   });
 
 
@@ -284,7 +284,7 @@ describe('CelebrityCardComponent', () => {
 
       // Arrange
       component.celebrity = CloneDataInDeep.clone(celebritiesMock[0]);
-      const value: string = 'positive';
+      const value = 'positive';
 
       spyOn(component.voteClick, 'emit');
 
@@ -306,7 +306,7 @@ describe('CelebrityCardComponent', () => {
   describe('#getVotesPercents', () => {
 
     it('Should assign votes percentages to votesPercentages attribute', () => {
-      
+
       // Arrange
       const votes: Vote[] = [
         {
@@ -324,13 +324,13 @@ describe('CelebrityCardComponent', () => {
       component.getVotesPercents();
 
       const expectedVotesPercents = [50, 50];
-      
+
       // Assert
       expect(component.votesPercents).toEqual(expectedVotesPercents);
-      
+
     });
-        
-  })
-  
+
+  });
+
 
 });

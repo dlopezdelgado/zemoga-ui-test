@@ -6,8 +6,9 @@ export class CelebrityCardBusinessLogic {
 
 
   static getTotalVotes(celebrity: Celebrity | undefined): number[] {
-    if (!celebrity || !celebrity.votes || celebrity.votes.length === 0)
+    if (!celebrity || !celebrity.votes || celebrity.votes.length === 0) {
       return [0, 0];
+    }
 
     const positiveVotes = celebrity.votes.filter(vote => vote.positiveVote);
     const negativeVotes = celebrity.votes.filter(vote => vote.negativeVote);
@@ -17,8 +18,9 @@ export class CelebrityCardBusinessLogic {
   }
 
   static calculateVotesPercentages(celebrity: Celebrity | undefined): number[] {
-    if (!celebrity || !celebrity.votes || celebrity.votes.length === 0)
+    if (!celebrity || !celebrity.votes || celebrity.votes.length === 0) {
       return [0, 0];
+    }
 
     const [positiveVotes, negativeVotes] = this.getTotalVotes(celebrity);
     const totalVotes = positiveVotes + negativeVotes;
@@ -51,11 +53,11 @@ export class CelebrityCardComponent implements OnInit {
     this.getVotesPercents();
   }
 
-  vote(value: string) {
+  vote(value: string): void {
     this.voteClick.emit({ celebrity: this.celebrity, voteType: value });
   }
 
-  getVotesPercents() {
+  getVotesPercents(): void{
     this.votesPercents = CelebrityCardBusinessLogic.calculateVotesPercentages(this.celebrity);
   }
 

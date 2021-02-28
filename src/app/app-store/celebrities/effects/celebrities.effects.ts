@@ -22,9 +22,9 @@ export class CelebritiesEffects {
   voteCelebrity$ = createEffect(() => this.actions$.pipe(
     ofType(CelebritiesActions.voteCelebrity),
     exhaustMap(action => this.service.voteCelebrity(action.celebrity).pipe(
-      map(celebrityData => CelebritiesActions.voteCelebritySuccess({  
-        celebrity:{
-          changes:{
+      map(celebrityData => CelebritiesActions.voteCelebritySuccess({
+        celebrity: {
+          changes: {
             ...action.celebrity,
             votes: celebrityData.votes
           },
@@ -33,7 +33,7 @@ export class CelebritiesEffects {
       })),
       catchError(error => of(CelebritiesActions.voteCelebrityFail({ error })))
     ))
-  ))
+  ));
 
   constructor(private actions$: Actions, public service: CelebritiesService) { }
 

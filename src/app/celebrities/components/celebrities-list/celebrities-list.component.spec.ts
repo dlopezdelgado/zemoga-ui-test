@@ -100,11 +100,11 @@ describe('CelebritiesListComponent', () => {
 
       // Act
       const response = component.voteCelebrity({ celebrity, voteType });
-      
+
       // Assert
       expect(response).toBeUndefined();
-      
-    })
+
+    });
 
     it('Should call voteCelebrity from celebritiesHandler with a positive vote', () => {
 
@@ -130,7 +130,7 @@ describe('CelebritiesListComponent', () => {
       const expectedCelebrity: Celebrity = {
         ...celebrity,
         votes: [vote]
-      }
+      };
 
       // Act
       component.voteCelebrity({ celebrity, voteType });

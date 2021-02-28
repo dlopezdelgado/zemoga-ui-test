@@ -17,7 +17,7 @@ export class ErrorComponent {
 
   constructor() { }
 
-  retryAction() {
+  retryAction(): void {
     this.retry.emit();
     this.error = undefined;
   }

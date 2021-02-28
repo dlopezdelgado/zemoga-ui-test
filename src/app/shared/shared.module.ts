@@ -8,7 +8,7 @@ import { LoaderComponent } from './components/ui/loader/loader.component';
 
 @NgModule({
   declarations: [
-    ErrorComponent, 
+    ErrorComponent,
     LoaderComponent
   ],
   imports: [

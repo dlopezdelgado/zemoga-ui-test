@@ -8,7 +8,7 @@ export class SubCollection {
     this.subs.add(subscription);
   }
 
-  unsubscribe() {
+  unsubscribe(): void {
     this.subs.unsubscribe();
   }
 
