@@ -1,4 +1,4 @@
-import { Vote } from '../../models/celebrity.model';
+import { Vote } from '../../models/candidate.model';
 
 
 export const votesMock: Vote[] = [

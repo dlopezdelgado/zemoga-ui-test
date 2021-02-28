@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
-    loadChildren: () => import('./celebrities/celebrities.module').then(childModule => childModule.CelebritiesModule)
+    loadChildren: () => import('./candidates/candidates.module').then(childModule => childModule.CandidatesModule)
   },
 ];
 

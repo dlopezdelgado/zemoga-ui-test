@@ -5,9 +5,9 @@ import { appReducers } from './app-store.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
-import { CelebritiesEffects } from './celebrities/effects/celebrities.effects';
+import { CandidatesEffects } from './candidates/effects/candidates.effects';
 
-import * as fromCelebrities from './celebrities/reducer/celebrities.reducer';
+import * as fromCandidates from './candidates/reducer/candidates.reducer';
 import { SharedModule } from '../shared/shared.module';
 
 
@@ -32,8 +32,8 @@ import { SharedModule } from '../shared/shared.module';
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
     EffectsModule.forRoot([]),
-    EffectsModule.forFeature([CelebritiesEffects]),
-    StoreModule.forFeature(fromCelebrities.celebritiesFeatureKey, fromCelebrities.reducer)
+    EffectsModule.forFeature([CandidatesEffects]),
+    StoreModule.forFeature(fromCandidates.candidatesFeatureKey, fromCandidates.reducer)
   ]
 })
 export class AppStoreModule { }

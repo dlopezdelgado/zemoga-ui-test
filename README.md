@@ -13,7 +13,7 @@ Author: Daniel López
 - Store has been handled with REDUX library, using the following structure:
   - An app-store module has been created in order to centralize all the redux in a single module
   - Each store entity is created in separated folders into app-store folder as the following example:
-    - celebrities
+    - candidates
       - actions
       - effects
       - handler: this feature handles all selectors and actions dispatchers for the entity in store
