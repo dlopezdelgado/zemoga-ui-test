@@ -117,7 +117,7 @@ describe('Candidates Effects', () => {
           ...action.candidate,
           votes: candidate.votes
         },
-        id: action.candidate.id
+        id: action.candidate._id
       }
       const actionSuccess = CandidatesActions.voteCandidateSuccess({ candidate: updateCandidate });
 

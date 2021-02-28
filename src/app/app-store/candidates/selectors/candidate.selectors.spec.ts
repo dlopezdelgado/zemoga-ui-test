@@ -14,8 +14,8 @@ describe('Candidate Selectors', () => {
 
       const appState = {
         candidates: {
-          entities: { [candidates[0].id]: candidates[0], [candidates[1].id]: candidates[1] },
-          ids: [candidates[0].id, candidates[1].id]
+          entities: { [candidates[0]._id]: candidates[0], [candidates[1]._id]: candidates[1] },
+          ids: [candidates[0]._id, candidates[1]._id]
         }
       };
 

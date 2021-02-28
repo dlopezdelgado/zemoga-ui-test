@@ -16,7 +16,7 @@ export const candidatesFeatureKey = 'candidates';
 export const candidateFeatureSelector = createFeatureSelector<CandidateState>(candidatesFeatureKey);
 
 export const candidateAdapter: EntityAdapter<Candidate> = createEntityAdapter<Candidate>({
-  selectId: (candidate: Candidate) => candidate.id,
+  selectId: (candidate: Candidate) => candidate._id,
   // sortComparer: (a: Candidate, b: Candidate) => a.name.localeCompare(b.name)
 });
 

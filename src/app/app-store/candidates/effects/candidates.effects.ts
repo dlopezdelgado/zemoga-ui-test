@@ -28,7 +28,7 @@ export class CandidatesEffects {
             ...action.candidate,
             votes: candidateData.votes
           },
-          id: action.candidate.id
+          id: action.candidate._id
         }
       })),
       catchError(error => of(CandidatesActions.voteCandidateFail({ error })))

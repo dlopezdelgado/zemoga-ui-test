@@ -1,5 +1,5 @@
 export interface Candidate {
-  id: string;
+  _id: string;
   name: string;
   image: string;
   category: string;
@@ -10,7 +10,6 @@ export interface Candidate {
 
 
 export interface Vote {
-  id?: string;
   positiveVote: boolean;
   negativeVote: boolean;
   voteDate?: Date;

@@ -139,7 +139,7 @@ describe('CandidatesListComponent', () => {
       // Assert
       component.candidatesHandler.getCandidates$.subscribe(
         (resp) => {
-          const updatedCandidate = resp.filter(cel => cel.id === candidate.id);
+          const updatedCandidate = resp.filter(cand => cand._id === candidate._id);
           expect(updatedCandidate[0]).toEqual(expectedCandidate);
         }
       );
