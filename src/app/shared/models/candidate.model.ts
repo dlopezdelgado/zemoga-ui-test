@@ -1,16 +1,16 @@
 export interface Candidate {
-  id: string;
+  _id: string;
   name: string;
   image: string;
   category: string;
   description: string;
   votes?: Vote[];
+  enableVoting?: boolean;
 
 }
 
 
 export interface Vote {
-  id?: string;
   positiveVote: boolean;
   negativeVote: boolean;
   voteDate?: Date;

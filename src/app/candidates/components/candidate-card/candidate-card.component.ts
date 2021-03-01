@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Candidate } from 'src/app/shared/models/candidate.model';
 
 
@@ -38,27 +39,36 @@ export class CandidateCardBusinessLogic {
   templateUrl: './candidate-card.component.html',
   styleUrls: ['./candidate-card.component.scss']
 })
-export class CandidateCardComponent implements OnInit {
+export class CandidateCardComponent implements OnChanges {
 
-  @Input() id: string | undefined;
-  @Input() candidate: Candidate | undefined;
+  @Input() idIndex: string | undefined;
+  @Input() candidate?: Candidate;
+
+
 
   @Output() voteClick = new EventEmitter();
 
   votesPercents: number[] = [0, 0];
 
+  showVoteForm = true;
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
     this.getVotesPercents();
   }
 
-  vote(value: string): void {
+  sendVote(value: string): void {
     this.voteClick.emit({ candidate: this.candidate, voteType: value });
+    this.showVoteForm = false;
   }
 
   getVotesPercents(): void{
     this.votesPercents = CandidateCardBusinessLogic.calculateVotesPercentages(this.candidate);
+  }
+
+  voteAgain(): void {
+    this.showVoteForm = true;
   }
 
 

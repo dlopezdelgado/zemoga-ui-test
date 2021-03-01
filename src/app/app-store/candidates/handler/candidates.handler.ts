@@ -14,10 +14,10 @@ export class CandidatesHandler {
   loadingCandidates$ = this.store$.pipe(select(CandidateSelectors.selectLoadingCandidates));
 
   errorList$ = this.actions$.pipe(ofType(CandidatesActions.getAllCandidatesFail), map(action => action.error));
-  errorVote$ = this.actions$.pipe(ofType(CandidatesActions.voteCandidateFail), map(action => action.error));
+  errorUpdate$ = this.actions$.pipe(ofType(CandidatesActions.updateCandidateFail), map(action => action.error));
 
   successList$ = this.actions$.pipe(ofType(CandidatesActions.getAllCandidatesSuccess), map(action => action.candidates));
-  successVote$ = this.actions$.pipe(ofType(CandidatesActions.voteCandidateSuccess), map(action => action.candidate));
+  successUpdate$ = this.actions$.pipe(ofType(CandidatesActions.updateCandidateSuccess), map(action => action.candidate));
 
 
   constructor(public actions$: Actions, public store$: Store) { }
@@ -27,8 +27,8 @@ export class CandidatesHandler {
     this.store$.dispatch(CandidatesActions.getAllCandidates());
   }
 
-  voteCandidate(candidate: Candidate): void {
-    this.store$.dispatch(CandidatesActions.voteCandidate({ candidate }));
+  updateCandidate(candidate: Candidate): void {
+    this.store$.dispatch(CandidatesActions.updateCandidate({ candidate }));
   }
 
 

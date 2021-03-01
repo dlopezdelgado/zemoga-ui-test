@@ -9,20 +9,20 @@ import * as CandidatesActions from '../actions/candidates.actions';
 
 export interface CandidateState extends EntityState<Candidate> {
   loadingCandidates: boolean;
-  loadingVote: boolean;
+  loadingUpdate: boolean;
 }
 
 export const candidatesFeatureKey = 'candidates';
 export const candidateFeatureSelector = createFeatureSelector<CandidateState>(candidatesFeatureKey);
 
 export const candidateAdapter: EntityAdapter<Candidate> = createEntityAdapter<Candidate>({
-  selectId: (candidate: Candidate) => candidate.id,
+  selectId: (candidate: Candidate) => candidate._id,
   // sortComparer: (a: Candidate, b: Candidate) => a.name.localeCompare(b.name)
 });
 
 export const candidateInitialState: CandidateState = candidateAdapter.getInitialState({
   loadingCandidates: false,
-  loadingVote: false
+  loadingUpdate: false
 });
 
 
@@ -35,11 +35,11 @@ export const reducer = createReducer(
   })),
   on(CandidatesActions.getAllCandidatesFail, (state) => ({ ...state, loadingCandidates: false })),
 
-  on(CandidatesActions.voteCandidate, (state) => ({ ...state, loadingVote: true })),
-  on(CandidatesActions.voteCandidateSuccess, (state, { candidate }) => candidateAdapter.updateOne(candidate, {
+  on(CandidatesActions.updateCandidate, (state) => ({ ...state, loadingUpdate: true })),
+  on(CandidatesActions.updateCandidateSuccess, (state, { candidate }) => candidateAdapter.updateOne(candidate, {
     ...state,
-    loadingVote: false
+    loadingUpdate: false
   })),
-  on(CandidatesActions.voteCandidateFail, (state) => ({ ...state, loadingVote: false })),
+  on(CandidatesActions.updateCandidateFail, (state) => ({ ...state, loadingUpdate: false })),
 
 );

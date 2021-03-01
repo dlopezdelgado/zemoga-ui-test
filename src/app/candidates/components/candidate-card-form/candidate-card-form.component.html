@@ -1,0 +1,26 @@
+<div class="candidate-vote">
+  
+  <form
+    [formGroup]="form"
+    *ngIf="form"
+    (ngSubmit)="saveVoteForm()"
+  >
+    <div class="candidate-vote__buttons">
+      <button
+        class="candidate-vote__buttons__vote positive"
+        [ngClass]="{ selected: form.get('vote')?.value === 'positive' }"
+        (click)="vote('positive', $event)"
+      ></button>
+      <button
+        class="candidate-vote__buttons__vote negative"
+        [ngClass]="{ selected: form.get('vote')?.value === 'negative' }"
+        (click)="vote('negative', $event)"
+      ></button>
+      <input type="hidden" value="positive" formControlName="vote" name="vote" />
+      <button class="candidate-vote__buttons__confirm">Vote</button>
+    </div>
+  </form>
+
+
+
+</div>

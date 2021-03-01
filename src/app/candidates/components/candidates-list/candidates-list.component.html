@@ -36,10 +36,10 @@
   >
     <div
       class="candidates-list__wrapper__item"
-      *ngFor="let candidate of candidatesHandler.getCandidates$ | async; index as i"
+      *ngFor="let candidate of candidates; let i = index; trackBy: trackByFn"
     >
       <app-candidate-card
-        [id]="'candidateItem-' + i"
+        [idIndex]="'candidateItem-' + i"
         [candidate]="candidate"
         (voteClick)="voteCandidate($event)"
       ></app-candidate-card>

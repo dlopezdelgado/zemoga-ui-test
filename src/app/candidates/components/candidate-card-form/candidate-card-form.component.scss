@@ -1,0 +1,44 @@
+@import "src/themes/colors";
+
+.candidate-vote{
+
+  &__buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+
+    &__vote {
+      width: 30px;
+      height: 30px;
+      background-color: $positiveBg;
+      background-position: center;
+      border: none;
+      cursor: pointer;
+      outline: none;
+
+      &.positive {
+        background-image: url("/assets/icons/thumb-up-small.png");
+      }
+
+      &.negative {
+        background-color: $negativeBg;
+        background-image: url("/assets/icons/thumb-down-small.png");
+      }
+
+      &.selected {
+        border: 2px solid $primary;
+      }
+    }
+
+    &__confirm {
+      background-color: transparent;
+      border: 1px solid $primary;
+      color: $primary;
+      padding: 5px 15px;
+      cursor: pointer;
+    }
+  }
+
+
+
+}
