@@ -1,64 +1,68 @@
-@import "src/themes/mixins";
+@import 'src/themes/mixins';
 
-.candidates-list{
-
-  &__message{
+.candidates-list {
+  &__message {
     margin-top: 40px;
     background-color: #ebebeb;
     padding: 20px;
     display: flex;
-    &__left{
+    &__left {
       flex: 40%;
-      &__normal{
+      &__normal {
         display: block;
         font-size: 22px;
       }
-      &__big{
+      &__big {
         font-size: 37px;
         font-weight: bold;
       }
-
-      @include mq-down(sm) {
-        &__normal{
-          font-size: 16px;
-        }
-        &__big{
-          font-size: 18px;
-          font-weight: bold;
-        }
-      }
     }
-    &__right{
+    &__right {
       font-size: 15px;
       align-self: center;
     }
   }
 
-  &__title{
-      font-size: 40px;
-
-      @include mq-down(md) {
-        text-align: center;
-      }
+  &__title {
+    font-size: 40px;
   }
 
-  &__wrapper{
+  &__wrapper {
     margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
-  
-    &__item{
+
+    &__item {
       flex: 40%;
     }
-  
-    @include mq-down(md) {
+  }
+
+  @include mq-down(md) {
+    &__message {
+      flex-direction: column;
+      &__left {
+        text-align: center;
+        &__normal {
+          font-size: 16px;
+        }
+        &__big {
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    &__title {
+      text-align: center;
+    }
+
+    &__wrapper {
       flex-direction: column;
       align-items: center;
     }
   }
 }
-
 
 .candidates-loading {
   width: 100px;

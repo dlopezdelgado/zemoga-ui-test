@@ -4,9 +4,6 @@
 /* GENERAL STYLES */
 html,
 body {
-  height: 100%; }
-
-body {
   margin: 0;
   font-family: 'Lato', sans-serif; }
 
@@ -24,7 +21,9 @@ body {
       margin-bottom: 0; } }
   @media (max-width: 1019px) {
     .zenoga-app {
-      width: 100%; } }
+      width: 100%;
+      background-size: auto;
+      background-position: top center; } }
 
 .main-container {
   position: relative;
@@ -37,16 +36,8 @@ body {
   flex-direction: column;
   padding-top: 35px;
   height: 705px; }
-  @media (max-width: 799px) {
-    .header {
-      flex-direction: column;
-      align-items: center; } }
   .header__top-bar {
     display: flex; }
-    @media (max-width: 799px) {
-      .header__top-bar {
-        flex-direction: column;
-        align-items: center; } }
     .header__top-bar__title {
       margin: 0;
       font-size: 32px;
@@ -62,14 +53,21 @@ body {
         color: #FFFFFF;
         text-decoration: none;
         font-weight: 300; }
-      @media (max-width: 799px) {
-        .header__top-bar__navbar {
-          padding: 20px 0; } }
   .header__card {
     margin-top: 90px; }
+  @media (max-width: 799px) {
+    .header__card img {
+      width: 100%; } }
   @media (max-width: 1019px) {
     .header {
-      width: 100%; } }
+      flex-direction: column;
+      align-items: center;
+      width: 100%; }
+      .header__top-bar {
+        flex-direction: column;
+        align-items: center; }
+        .header__top-bar__navbar {
+          padding: 20px 0; } }
 
 /* CANDIDATES LIST */
 .candidates-list__message {
@@ -85,21 +83,12 @@ body {
     .candidates-list__message__left__big {
       font-size: 37px;
       font-weight: bold; }
-    @media (max-width: 799px) {
-      .candidates-list__message__left__normal {
-        font-size: 16px; }
-      .candidates-list__message__left__big {
-        font-size: 18px;
-        font-weight: bold; } }
   .candidates-list__message__right {
     font-size: 15px;
     align-self: center; }
 
 .candidates-list__title {
   font-size: 40px; }
-  @media (max-width: 1019px) {
-    .candidates-list__title {
-      text-align: center; } }
 
 .candidates-list__wrapper {
   margin-top: 40px;
@@ -108,10 +97,27 @@ body {
   gap: 40px; }
   .candidates-list__wrapper__item {
     flex: 40%; }
-  @media (max-width: 1019px) {
-    .candidates-list__wrapper {
-      flex-direction: column;
-      align-items: center; } }
+
+@media (max-width: 1019px) {
+  .candidates-list__message {
+    flex-direction: column; }
+    .candidates-list__message__left {
+      text-align: center; }
+      .candidates-list__message__left__normal {
+        font-size: 16px; }
+      .candidates-list__message__left__big {
+        font-size: 18px;
+        font-weight: bold; }
+  .candidates-list__title {
+    text-align: center; }
+  .candidates-list__wrapper {
+    flex-direction: column;
+    align-items: center; } }
+
+.candidates-loading {
+  width: 100px;
+  height: 100px;
+  margin: auto; }
 
 /* CANDIDATE CARD */
 .candidate-card {
@@ -204,6 +210,31 @@ body {
       .candidate-card__bottom__bar__value-negative {
         position: absolute;
         right: 45px; }
+  @media (max-width: 489px) {
+    .candidate-card {
+      width: 300px;
+      height: 400px;
+      background-position: center center; }
+      .candidate-card__content__thumb {
+        width: 60px; }
+      .candidate-card__content__info__name {
+        font-size: 25px; }
+      .candidate-card__content__info__description {
+        margin-top: 5px;
+        font-size: 13px; }
+      .candidate-card__bottom__bar {
+        padding-top: 12px;
+        font-size: 18px; }
+        .candidate-card__bottom__bar--negative {
+          background-position: 5% center; }
+        .candidate-card__bottom__bar--positive {
+          background-position: 95% center; }
+        .candidate-card__bottom__bar__value-positive {
+          position: relative;
+          left: 5px; }
+        .candidate-card__bottom__bar__value-negative {
+          position: relative;
+          right: 5px; } }
 
 .candidate-vote__buttons {
   display: flex;
@@ -266,4 +297,11 @@ body {
       background-image: url("../assets/icons/twitter.png"); }
   @media (max-width: 1019px) {
     .footer {
-      width: 100%; } }
+      width: 100%;
+      flex-direction: column; }
+      .footer__navbar {
+        gap: 10px;
+        padding: 0;
+        margin-bottom: 10px; }
+        .footer__navbar__item {
+          font-size: 12px; } }

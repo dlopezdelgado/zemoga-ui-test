@@ -18,5 +18,7 @@
 
   @include mq-down(md) {
     width: 100%;
+    background-size: auto;
+    background-position: top center;
   }
 }

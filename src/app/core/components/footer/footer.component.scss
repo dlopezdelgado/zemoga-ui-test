@@ -47,5 +47,15 @@
 
   @include mq-down(md) {
     width: 100%;
+    flex-direction: column;
+
+    &__navbar{
+      gap: 10px;
+      padding: 0;
+      margin-bottom: 10px;
+      &__item {
+        font-size: 12px;
+      }
+    }
   }
 }

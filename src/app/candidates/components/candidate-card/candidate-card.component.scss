@@ -1,3 +1,4 @@
+@import 'src/themes/mixins';
 @import "src/themes/colors";
 
 .candidate-card {
@@ -125,6 +126,55 @@
       &__value-negative {
         position: absolute;
         right: 45px;
+      }
+    }
+  }
+
+  @include mq-down(xs) {
+    width: 300px;
+    height: 400px;
+    background-position: center center;
+
+    &__content{
+
+      &__thumb{
+        width: 60px;
+      }
+
+      &__info{
+        &__name{
+          font-size: 25px;
+        }
+
+        &__description{
+          margin-top: 5px;
+          font-size: 13px;
+        }
+      }
+    }
+    
+    &__bottom{
+      &__bar{
+        padding-top: 12px;
+        
+        font-size: 18px;
+
+        &--negative{
+          background-position: 5% center;
+        }
+
+        &--positive{
+          background-position: 95% center;
+        }
+
+        &__value-positive{
+          position: relative;
+          left: 5px;
+        }
+        &__value-negative{
+          position: relative;
+          right: 5px;
+        }
       }
     }
   }
