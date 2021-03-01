@@ -50,7 +50,7 @@ export class CandidateCardComponent implements OnChanges {
 
   votesPercents: number[] = [0, 0];
 
-  showVoteForm?: boolean = true;
+  showVoteForm = true;
 
   constructor() { }
 

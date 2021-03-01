@@ -21,19 +21,21 @@ export class CandidateCardFormComponent implements OnInit {
     this.createForm();
   }
 
-  createForm() {
+  createForm(): void {
     this.form = this.fb.group({
       vote: ['positive', [Validators.required]]
     });
   }
 
-  vote(value: string, event: any) {
+  vote(value: string, event: any): void {
+    if (!this.form) { return; }
     event.preventDefault();
-    this.form?.controls.vote.setValue(value);
+    this.form.controls.vote.setValue(value);
   }
 
-  saveVoteForm() {
-    const voteValue = this.form?.controls.vote.value;
+  saveVoteForm(): void {
+    if (!this.form) { return; }
+    const voteValue = this.form.controls.vote.value;
     this.saveVote.emit(voteValue);
   }
 

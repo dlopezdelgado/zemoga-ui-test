@@ -109,16 +109,16 @@ describe('CandidatesListComponent', () => {
     it('Should call voteCandidate from candidatesHandler with a positive vote', () => {
 
       // Arrange:
- 
+
       const candidate: Candidate = CloneDataInDeep.clone({...candidatesMock[0], votes: []});
 
       const vote: Vote = {
         negativeVote: false,
         positiveVote: true
       };
-      
-      spyOn(component.candidatesHandler,'updateCandidate');
-  
+
+      spyOn(component.candidatesHandler, 'updateCandidate');
+
 
       fixture.detectChanges();
 

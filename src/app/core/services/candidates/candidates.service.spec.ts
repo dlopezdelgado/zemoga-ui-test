@@ -70,7 +70,7 @@ describe('CandidatesService', () => {
       const updatedCandidate: Candidate = {
         ...candidate,
         votes: [votesMock[0]]
-      }
+      };
 
 
       // Act
