@@ -7,7 +7,7 @@ This project has been divided in 3 main sections:
 2. Interaction - JS: Located in root directory (Excepting /layout and /server directories)
 3. NodeJS: Located in /server folder 
 
-## 1. Layout HTML-CSS (Branch name: 'layout')
+## 1. Layout HTML-CSS (Branch name: 'layout' or 'master')
 
 ### Instructions
 1. Go to /layout folder, or switch to the branch named 'layout'
