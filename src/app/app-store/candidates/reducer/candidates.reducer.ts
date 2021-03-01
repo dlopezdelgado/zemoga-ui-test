@@ -9,7 +9,7 @@ import * as CandidatesActions from '../actions/candidates.actions';
 
 export interface CandidateState extends EntityState<Candidate> {
   loadingCandidates: boolean;
-  loadingVote: boolean;
+  loadingUpdate: boolean;
 }
 
 export const candidatesFeatureKey = 'candidates';
@@ -22,7 +22,7 @@ export const candidateAdapter: EntityAdapter<Candidate> = createEntityAdapter<Ca
 
 export const candidateInitialState: CandidateState = candidateAdapter.getInitialState({
   loadingCandidates: false,
-  loadingVote: false
+  loadingUpdate: false
 });
 
 
@@ -35,11 +35,11 @@ export const reducer = createReducer(
   })),
   on(CandidatesActions.getAllCandidatesFail, (state) => ({ ...state, loadingCandidates: false })),
 
-  on(CandidatesActions.updateCandidate, (state) => ({ ...state, loadingVote: true })),
+  on(CandidatesActions.updateCandidate, (state) => ({ ...state, loadingUpdate: true })),
   on(CandidatesActions.updateCandidateSuccess, (state, { candidate }) => candidateAdapter.updateOne(candidate, {
     ...state,
-    loadingVote: false
+    loadingUpdate: false
   })),
-  on(CandidatesActions.updateCandidateFail, (state) => ({ ...state, loadingVote: false })),
+  on(CandidatesActions.updateCandidateFail, (state) => ({ ...state, loadingUpdate: false })),
 
 );

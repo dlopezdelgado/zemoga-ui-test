@@ -1,6 +1,6 @@
 <div
   class="candidate-card"
-  [id]="id"
+  [id]="idIndex"
   *ngIf="candidate"
   [ngStyle]="{ 'background-image': 'url(' + candidate.image + ')' }"
 >
@@ -22,19 +22,15 @@
         {{ candidate.description }}
       </div>
 
-      <div class="candidate-card__content__info__buttons">
-        <button
-          class="candidate-card__content__info__buttons__vote positive"
-          (click)="vote('positive')"
-        ></button>
-        <button
-          class="candidate-card__content__info__buttons__vote negative"
-          (click)="vote('negative')"
-        ></button>
-        <div class="candidate-card__content__info__buttons__confirm">
-          {{candidate.votes?.length}} Total Votes
-        </div>
+      <div class="candidate-card__content__info__form" *ngIf="showVoteForm">
+        <app-candidate-card-form (saveVote)="sendVote($event)"></app-candidate-card-form>
       </div>
+
+      <div class="candidate-card__content__submitted" *ngIf="!showVoteForm">
+        <span class="candidate-card__content__submitted__message">Thank you for voting!</span>
+        <button class="candidate-card__content__submitted__button" (click)="voteAgain()">Vote Again</button>
+      </div>
+
     </div>
   </div>
 

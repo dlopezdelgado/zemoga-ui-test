@@ -1,10 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { filter, tap } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 import { CandidatesHandler } from 'src/app/app-store/candidates/handler/candidates.handler';
 import { Candidate, Vote } from 'src/app/shared/models/candidate.model';
 import { ErrorModel } from 'src/app/shared/models/error.model';
 import { messages } from 'src/app/shared/utils/constants/constants';
-import { candidatesMock } from 'src/app/shared/utils/mocks/candidates.mock';
 import { SubCollection } from 'src/app/shared/utils/rx/sub-collection';
 import { CloneDataInDeep } from 'typescript-clone-data-in-deep';
 
@@ -19,6 +18,7 @@ export class CandidatesListComponent implements OnInit, OnDestroy {
   candidatesError: ErrorModel | undefined;
 
   subs = new SubCollection();
+
 
   constructor(
     public candidatesHandler: CandidatesHandler
@@ -62,6 +62,10 @@ export class CandidatesListComponent implements OnInit, OnDestroy {
     };
     updatedCandidate.votes?.push(vote);
     this.candidatesHandler.updateCandidate(updatedCandidate);
+  }
+
+  trackByFn(_: number, candidateItem: Candidate): string {
+    return candidateItem._id;
   }
 
 }

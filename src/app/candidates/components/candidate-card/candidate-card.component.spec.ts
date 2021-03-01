@@ -294,7 +294,7 @@ describe('CandidateCardComponent', () => {
       };
 
       // Act
-      component.vote(value);
+      component.sendVote(value);
 
       // Assert
       expect(component.voteClick.emit).toHaveBeenCalledWith(expectedParams);

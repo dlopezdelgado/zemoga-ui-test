@@ -16,6 +16,7 @@ export class CandidatesService {
     return this.http.get<Candidate[]>(serverUrls.candidates);
   }
 
+
   updateCandidate(candidate: Candidate): Observable<Candidate>{
     return this.http.put<Candidate>(
       `${serverUrls.candidates}${candidate._id}`,

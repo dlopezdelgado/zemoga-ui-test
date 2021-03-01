@@ -5,6 +5,7 @@ export interface Candidate {
   category: string;
   description: string;
   votes?: Vote[];
+  enableVoting?: boolean;
 
 }
 
