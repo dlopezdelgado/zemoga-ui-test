@@ -25,6 +25,7 @@ This project has been divided in 3 main sections:
 3. To see the app running in the browser, navigate to 'http://localhost:4200'
 
 **NOTES** 
+- It's necessary to run 'npm i' command in root folder and also in /server folder, in order to install all the dependencies for each project.
 - You will need to start the backend side in order to be able to see the candidates and votes data.
 - The backend side was developed in a high level way, just to get persistance in the data for candidates and votes. The only features that could be developed due the timeline were:
   - API's:
