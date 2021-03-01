@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Kanye West",
+    "image": "/assets/images/candidates/01-kanye-west.jpg",
+    "description": "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
+    "category": "Entertainment",
+    "votes": [
+      { "negativeVote": true, "positiveVote": false },
+      { "negativeVote": false, "positiveVote": true },
+      { "negativeVote": true, "positiveVote": false }
+    ]
+  },
+  {
+    "name": "Mark Zuckerberg",
+    "image": "/assets/images/candidates/02-mark-zuckerberg.jpg",
+    "description": "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
+    "category": "Business",
+    "votes": [
+      { "negativeVote": true, "positiveVote": false },
+      { "negativeVote": false, "positiveVote": true },
+      { "negativeVote": true, "positiveVote": false },
+      { "negativeVote": false, "positiveVote": true }
+    ]
+  },
+  {
+    "name": "Cristina Fernández de Kirchner",
+    "image": "/assets/images/candidates/03-cristina-fernandez.jpg",
+    "description": "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
+    "category": "Politics",
+    "votes": [
+      { "negativeVote": true, "positiveVote": false },
+      { "negativeVote": false, "positiveVote": true },
+      { "negativeVote": false, "positiveVote": true }
+    ]
+  },
+  {
+    "name": "Malala Yousafzai",
+    "image": "/assets/images/candidates/04-malala-yousafzai.jpg",
+    "description": "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
+    "category": "Entertainment",
+    "votes": [
+      { "negativeVote": true, "positiveVote": false },
+      { "negativeVote": false, "positiveVote": true }
+    ]
+  }
+]
